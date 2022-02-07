@@ -21,6 +21,8 @@
 #include "kmsp11/util/kms_client.h"
 #include "kmsp11/util/status_macros.h"
 
+#include "glog/logging.h"
+
 namespace kmsp11 {
 namespace {
 
@@ -376,9 +378,7 @@ absl::StatusOr<AsymmetricHandleSet> Session::GenerateKeyPair(
   }
 
   if (!public_key_attrs.empty()) {
-    return NewInvalidArgumentError(
-        "this token does not accept public key attributes",
-        CKR_TEMPLATE_INCONSISTENT, SOURCE_LOCATION);
+    LOG(INFO) << "KMS token does not accept public key attributes. Ignoring it.";
   }
 
   ASSIGN_OR_RETURN(KeyGenerationParams prv_gen_params,
