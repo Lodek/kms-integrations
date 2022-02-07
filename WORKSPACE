@@ -61,7 +61,7 @@ http_archive(
 
 http_archive(
     name = "com_google_absl",  # 20211102.0 / 2021-11-02
-    sha256 = "cf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
+    sha256 = "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
     strip_prefix = "abseil-cpp-20211102.0",
     url = "https://github.com/abseil/abseil-cpp/archive/20211102.0.tar.gz",
 )
